@@ -2,28 +2,26 @@ package ovKaart;
 
 public class incheckPaal {
 
-	private double saldo;
-	private boolean ingecheckt;
-	private static final double START_TARIEF = 2.50;
-
-	public void ovkaart (double saldo) {
-		this.saldo = saldo;
-		this.ingecheckt = false;
-	}
+	private ovkaart kaart;
+	private static final double startTarief = 2.00;
+	
+	public incheckPaal(ovkaart kaart) {
+        this.kaart = kaart;
+    }
 
 	public void inchecken() {
-		if (!ingecheckt && saldo >= START_TARIEF) {
-			saldo -= START_TARIEF;
-			ingecheckt = true;
-			System.out.println("Ingecheckt. " + START_TARIEF + " afgeschreven.");
+        if (kaart.getSaldo() >= startTarief) {
+            kaart.afschrijven(startTarief);
+            System.out.println("Ingecheckt.");
+        } else {
+            System.out.println("Niet genoeg saldo om in te checken.");
+        }
+    }
+		public void afgeschreven() {
+		System.out.println(startTarief + " afgeschreven.");
 		}
-	}
 
 		public void toonSaldo() {
-			System.out.println("Saldo: " + saldo);
-	}
-
-		public boolean isIngecheckt() {
-		return false;
+			System.out.println("Saldo: " + kaart.getSaldo());
 	}
 }

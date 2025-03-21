@@ -1,12 +1,17 @@
 package ovKaart;
 
 public class ovkaart {
-	public ovkaart(double d) {
-		// TODO Auto-generated constructor stub
-	}
+    private double saldo;
 
-	public class IncheckPaal {
-	    public static void inchecken(ovkaart kaart) {
-	        kaart.inchecken();
-	    }
-	}
+    public ovkaart(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void afschrijven(double bedrag) {
+        saldo -= bedrag;
+    }
+}
