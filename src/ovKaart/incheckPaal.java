@@ -29,13 +29,9 @@ public class incheckPaal {
 	        if (kaart.getSaldo() >= reisKosten + startTarief) {
 	            kaart.afschrijven(reisKosten + startTarief);
 	            System.out.println("uitgecheckt.");
-	        } else {
-	            System.out.println("Niet genoeg saldo.");
+	    		System.out.println(startTarief + reisKosten + " afgeschreven.");
+	    		
 	        }
+	        
 	    }
-
-		public void afgeschrevenSaldo() {
-			System.out.println(startTarief + reisKosten + " afgeschreven.");
-		}
-	
 }
