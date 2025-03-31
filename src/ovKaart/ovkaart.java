@@ -14,4 +14,8 @@ public class ovkaart {
     public void afschrijven(double bedrag) {
         saldo -= bedrag;
     }
+    
+    public void bijschrijven(double bedrag) {
+    	saldo += bedrag;
+    }
 }

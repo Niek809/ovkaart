@@ -3,22 +3,22 @@ package ovKaart;
 public class incheckPaal {
 
 	private ovkaart kaart;
-	private static final double startTarief = 1.50;
-	private static final double reisKosten = 5.20;
+	private station afstand;
+	private static final double startTarief = 4.20;
 	
 	public incheckPaal(ovkaart kaart) {
         this.kaart = kaart;
     }
 
 	public void inchecken() {
-        if (kaart.getSaldo() >= reisKosten + startTarief) {
+        if (kaart.getSaldo() >= startTarief)	{
             System.out.println("Ingecheckt.");
+            kaart.afschrijven(startTarief);
         } else {
             System.out.println("Niet genoeg saldo om in te checken.");
         }
     }
 		public void afgeschreven() {
-		System.out.println(startTarief + " afgeschreven.");
 	}
 
 		public void toonSaldo() {
@@ -26,12 +26,14 @@ public class incheckPaal {
 	}
 
 		public void uitchecken() {
-	        if (kaart.getSaldo() >= reisKosten + startTarief) {
-	            kaart.afschrijven(reisKosten + startTarief);
+	        if (kaart.getSaldo() >= afstand + startTarief) {
+	            kaart.afschrijven(reisKosten);
+	            kaart.bijschrijven(startTarief);
 	            System.out.println("uitgecheckt.");
-	    		System.out.println(startTarief + reisKosten + " afgeschreven.");
+	    		System.out.println(reisKosten + " afgeschreven.");
 	    		
 	        }
 	        
 	    }
+		
 }
