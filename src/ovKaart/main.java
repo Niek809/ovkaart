@@ -1,12 +1,20 @@
 package ovKaart;
 
 public class main {
-    public  main(String[] args) {
-  	  ovkaart mijnKaart = new ovkaart(50.30);
+    public static void main(String[] args) {
+        ovkaart mijnKaart = new ovkaart(50.00);
         incheckPaal incheckPaal = new incheckPaal(mijnKaart);
-        incheckPaal.inchecken();
-        incheckPaal.uitchecken();
-        incheckPaal.toonSaldo();
-  }
-}
 
+        station nijmegenCentraal = new station("Nijmegen Centraal", 12, 34);  
+        station nijmegenHeyendaal = new station("Nijmegen Heyendaal", 17, 21); 
+
+        double afstand = nijmegenCentraal.afstandUitrekenen(nijmegenHeyendaal);
+        double kosten = afstand;  
+        
+        incheckPaal.setAfstand(kosten);  
+        if (incheckPaal.inchecken()) {
+            incheckPaal.uitchecken(); 
+            incheckPaal.toonSaldo();  
+        }
+    }
+}
