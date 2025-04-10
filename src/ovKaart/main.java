@@ -7,14 +7,16 @@ public class main {
 
         station nijmegenCentraal = new station("Nijmegen Centraal", 12, 34);  
         station nijmegenHeyendaal = new station("Nijmegen Heyendaal", 17, 21); 
-
+        
+        opwaardeer opwaardeerPaal = new opwaardeer();
         double afstand = nijmegenHeyendaal.afstandUitrekenen(nijmegenCentraal);
         double kosten = afstand * 0.50; 
         
-        incheckPaal.setAfstand(kosten);  
-        if (incheckPaal.inchecken()) {
+        incheckPaal.setAfstand(kosten);
+        if (incheckPaal.inchecken()) {	
         	incheckPaal.uitchecken(); 
             incheckPaal.toonSaldo(); 
+            opwaardeerPaal.opwaardeerPaalMet(mijnKaart);
         }
     }
 }

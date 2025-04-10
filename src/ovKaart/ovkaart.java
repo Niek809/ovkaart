@@ -10,6 +10,10 @@ public class ovkaart {
     public double getSaldo() {
         return saldo;
     }
+    
+    public void setsaldo(double saldo) {
+    	this.saldo = saldo;
+    }
 
     public void afschrijven(double bedrag) {
         saldo -= bedrag;

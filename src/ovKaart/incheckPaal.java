@@ -36,12 +36,12 @@ public class incheckPaal {
         if (kaart.getSaldo() >= kosten) {
             kaart.afschrijven(kosten);
             System.out.println("Uitgecheckt.");
-            System.out.println(kosten + " afgeschreven.");
+            System.out.println("€" + String.format("%.2f",kosten)  + " afgeschreven.");
         }
     }
 
     public void toonSaldo() {
-        System.out.println("Huidig saldo: " + kaart.getSaldo());
+        System.out.println("Huidig saldo: " + "€" + String.format ("%.2f",kaart.getSaldo()));
     }
 
     public void setAfstand(double afstand) {
