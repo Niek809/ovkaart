@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class opwaardeer {
 	
 	Scanner sc = new Scanner(System.in);
-	private ovkaart kaart;
+	
 	
 	public void opwaardeerPaalMet(ovkaart kaart) {
 		double opwaarderen = sc.nextDouble();

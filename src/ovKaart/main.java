@@ -17,6 +17,7 @@ public class main {
         	incheckPaal.uitchecken(); 
             incheckPaal.toonSaldo(); 
             opwaardeerPaal.opwaardeerPaalMet(mijnKaart);
+            opwaardeerPaal.opwaardeerKaartVergeten();
         }
     }
 }
